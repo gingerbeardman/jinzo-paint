@@ -158,9 +158,10 @@ POINT	pts[3];
 COLORREF col[4];
 
 int	pcolor=0;
-int	pstyle=0;
-int	ppat=0; 
-int	perase=0;
+int	pstyle=2;
+int	ppat=0;
+int	ptmp=0;
+int	perase=2;
 int	bgc=16;
 
 int	pat_inv=0;
