@@ -97,6 +97,8 @@ int		drag_tap_flag=-1;
 int		tm=0,line_tm=-1;
 //int		backup_flag=0;
 BOOL	clipboard_flag=FALSE;
+// new vars
+BOOL		toggle_pen_col=FALSE;
 
 typedef enum {
 	UP,MOVE,DOWN
@@ -3728,6 +3730,11 @@ void mouse_down(HWND hWnd, WPARAM wParam, LPARAM lParam)
 //	pts[0].y=-1;
 	pts[1].x=x;
 	pts[1].y=y;
+
+	// swap between black and white
+	if (toggle_pen_col==TRUE) {
+		pcolor = (pcolor==0 ? 3 : 0);
+	}
 
 	put_pen(x,y,baseBuf,region_flag==PEN ? pcolor : 3,region_flag==PEN ? pstyle : perase,TRUE,FALSE);
 	modified_flag=1;
