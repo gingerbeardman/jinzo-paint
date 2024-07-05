@@ -519,7 +519,7 @@ void menu_check(void)
 	int		i;
 	static UINT flag[]={MF_UNCHECKED,MF_CHECKED};
 	static UINT lmenu[]={IDM_LOOPE_X1,IDM_LOOPE_X2,IDM_LOOPE_X3,IDM_LOOPE_X4,IDM_LOOPE_X8};
-	static int	lmag[]={1,2,3,4,8};
+	static int	lmag[]={1,2,3,5,8};
 
 	hm=CommandBar_GetMenu(ghWndCB, 0);
 	
