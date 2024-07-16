@@ -126,7 +126,7 @@ BOOL	clipboard_flag=FALSE;
 // new vars
 int		loope_dynamic=0;
 int		select_preset=0;
-BOOL		toggle_pen_col=FALSE;
+BOOL		toggle_pen_color=FALSE;
 
 typedef enum {
 	UP,MOVE,DOWN
@@ -549,7 +549,7 @@ void menu_check(void)
 	HMENU	hm;
 	int		i;
 	static UINT flag[]={MF_UNCHECKED,MF_CHECKED};
-	static UINT lmenu[]={IDM_LOOPE_X1,IDM_LOOPE_X2,IDM_LOOPE_X3,IDM_LOOPE_X4,IDM_LOOPE_X8};
+	static UINT lmenu[]={IDM_LOOPE_X1,IDM_LOOPE_X2,IDM_LOOPE_X3,IDM_LOOPE_X5,IDM_LOOPE_X8};
 	static int	lmag[]={1,2,3,5,8};
 
 	hm=CommandBar_GetMenu(ghWndCB, 0);
@@ -1121,7 +1121,7 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT uMessage,
 				case IDM_LOOPE_X1:	mag_button(hWnd,0);	break;	
 				case IDM_LOOPE_X2:	mag_button(hWnd,1);	break;	
 				case IDM_LOOPE_X3:	mag_button(hWnd,2);	break;	
-				case IDM_LOOPE_X4:	mag_button(hWnd,3);	break;	
+				case IDM_LOOPE_X5:	mag_button(hWnd,3);	break;	
 				case IDM_LOOPE_X8:	mag_button(hWnd,4);	break;	
 				case IDM_B_PAT0:	pat_button(hWnd,0);	break;	
 				case IDM_B_PAT1:	pat_button(hWnd,1);	break;	
@@ -1276,7 +1276,7 @@ LRESULT CALLBACK MainWndProc(HWND hWnd, UINT uMessage,
 
 				// toggle pen (b)
 				case 0x42:		//b
-					toggle_pen_col = !toggle_pen_col;
+					toggle_pen_color = !toggle_pen_color;
 					break;
 				// pen (n)
 				case 0x4E:		//n
@@ -4155,7 +4155,7 @@ void mouse_down(HWND hWnd, WPARAM wParam, LPARAM lParam)
 	pts[1].y=y;
 
 	// swap between black and white
-	if (toggle_pen_col==TRUE) {
+	if (toggle_pen_color==TRUE) {
 		pcolor = (pcolor==0 ? 3 : 0);
 	}
 
