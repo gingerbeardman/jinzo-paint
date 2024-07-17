@@ -213,7 +213,7 @@ BYTE	cconv[16],cconv_tmp[16];
 BOOL	conv_flag=FALSE;
 
 // ÉãÅ[Éy
-int		lmag[]={1,2,3,4,8};
+int		lmag[]={1,2,3,5,8};
 int		loope_num=0;
 int		loope_mag=lmag[loope_num];
 int		loope_x=0,loope_y=0;
